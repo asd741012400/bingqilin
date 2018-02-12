@@ -1,0 +1,300 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	float: left;
+	width: 100%;
+	border: 0;
+}
+
+.menu_bg{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 101;
+}	
+.menu_bg span{
+	display: block;
+	background: rgba(0, 0, 0, 0.8);
+	height: 56px;
+}
+.menu_bg i{
+	display: block;
+	background: #412a1e;
+	height: 100px;
+	margin-top: 37px;
+}
+.menu{
+	width: 1200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+	bottom: 0;
+	height: 100px;
+	line-height: 100px;
+}
+.menu b{
+	float: left;
+	width: 366px;
+	position: absolute;
+	bottom: 14px;
+}
+.menu ul{
+	float: right;
+}
+.menu ul li{
+	float: left;
+	padding-right: 40px;
+	font-size: 18px;
+}
+.menu ul li > a{
+	color: #fff;
+	font-weight: bold;
+	padding-bottom: 8px;
+}
+.menu ul li.active > a{
+	border-bottom: 3px solid #81c133;
+}
+.menu ul li:hover > a{
+	border-bottom: 3px solid #81c133;
+}
+.menu ul li:hover div{
+	display: block;
+}
+.menu ul li div{
+	display: none;
+	line-height: 30px;
+	color: #fff;
+	font-weight: bold;
+	background: #412a1e;
+	cursor:pointer;
+	padding-bottom: 16px;
+	margin-top: -20px;
+}
+
+.menu ul li div p{
+	width: 75%;
+	height: 33px;
+}
+.menu ul li div p:hover em{
+	opacity: 1;
+}
+.menu ul li div p a{
+	color: #fff;
+}
+.menu ul li div p em{
+	display: block;
+	border-bottom: 3px solid #81c133;
+	opacity: 0;
+}
+
+
+.clouds{
+	height: 0;
+	position: relative;
+	z-index: 200;
+}
+.clouds div{
+	width: 100%;
+	overflow: hidden;
+	height: 220px;
+	z-index: 200;
+	top: -220px;
+	position: relative;
+
+}
+.clouds p{
+	position: absolute;
+	z-index: 200;
+	overflow: hidden;
+	width: 100%;
+}
+.clouds p img{
+	width: auto;
+}
+.clouds p:first-of-type img{
+	left: 0px;
+	animation: cloudsP1 14s infinite forwards;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	position: relative;
+}
+.clouds p:last-of-type img{
+	right: 0;
+	top: 0;
+	position: relative;
+	animation: cloudsP2 14s infinite forwards;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	transform: rotateY(180deg);
+}
+
+
+@keyframes cloudsP1
+{
+
+	from {left: 0;}
+	to {left: -200px;}
+}
+
+@keyframes cloudsP2
+{
+	from {right: 0;}
+	to {right: -150px;}
+}
+
+
+
+
+
+footer .tab{
+	width: 1200px;
+	max-width: 1200px;
+	position: relative;
+	height: 270px;
+}
+
+footer .tab .tab_text h1{
+	font-size: 40px;
+	color: #81c133;
+	position: relative;
+	z-index: 200;
+	display: none;
+}
+footer .tab .tab_text h1.active{
+	display: block;
+}
+
+footer .tab .tab_title{
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	position: relative;
+	z-index: 110;
+}
+footer .tab .tab_title a{
+	float: left;
+	width: 17px;
+	height: 17px;
+	border: 3px solid #689db9;
+	border-radius: 50%;
+	margin-right: 4px;
+	background: #fff;
+}
+footer .tab .tab_title a.active{
+	background: #8fda78;
+}
+
+footer .tab .tab_content{
+	overflow: hidden;
+	position: absolute;
+	top: 20px;
+	height: 240px;
+	width: 100%;
+}
+footer .tab .tab_content ul{
+	position: absolute;
+	overflow: hidden;
+}
+
+
+footer .tab .tab_content ul li{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 1200px;
+	float: left;
+}
+
+footer .tab .tab_content ul li span{
+	width: 390px;
+	padding-left: 90px;
+}
+footer .tab .tab_content ul li span a img{
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto;
+}
+footer .tab .tab_content ul li p{
+	flex: 1;
+	padding-top: 110px;
+}
+
+footer .tab .tab_bg{
+	position: absolute;
+	width: 801px;
+	left: -88px;
+	top: 20px;
+	z-index: 100;
+}
+footer .footer_bg{
+	background: url('../../images/footer_bg.jpg') repeat-x #412a1e;
+	height: 400px;
+	position: relative;
+	top: 320px;
+}
+footer .footer_bg .footer{
+	width: 1200px;
+	max-width: 1200px;
+	position: relative;
+	height: 320px;
+}
+footer .footer_bg .footer b{
+	width: 570px;
+	position: absolute;
+	top: -300px;
+}
+footer .footer_bg .footer div{
+	float: right;
+	overflow: hidden;
+	margin-top: 46px;
+} 
+footer .footer_bg .footer div p{
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	color: #c0c0c0;
+	padding-left: 40px;
+	padding-right: 10px;
+}
+footer .footer_bg .footer div p strong{
+	display: block;
+	width: 140px;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+footer .footer_bg .note{
+	position: relative;
+	width: 1200px;
+	max-width: 1200px;
+	bottom: 0px;
+	z-index: 300;
+}
+footer .footer_bg .note div{
+	width: 100%;
+	text-align: center;
+	color: #666666;
+	font-size: 14px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(153, 153, 153, 0.5)
+}
+footer .footer_bg .clouds{
+	position: absolute;
+	bottom: 200px;
+	width: 100%;
+	z-index: 200;
+}
+footer .footer_bg .clouds i{
+	position: absolute;
+	top: 0;
+}

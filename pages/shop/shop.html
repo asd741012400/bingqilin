@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>店铺展示</title>
+	<link rel="stylesheet" href="../../common/common.css">
+	<link rel="stylesheet" href="shop.css">
+	<script src="../../libs/jquery.js"></script>
+</head>
+<body>
+	
+<div class="menu_bg">
+	<span></span>
+	<i></i>
+	<div class="menu">
+		<b><img src="../../images/logo.png" alt=""></b>
+		<ul>
+
+		</ul>
+	</div>
+</div>
+
+<div class="banner">
+	<div class="banner_img"></div>
+	<div class="change">
+		<div>
+			<a href="javascript:;" class="changeLeft"><img src="../../images/left_arrows.png" alt=""></a>
+			<a href="javascript:;"  class="changeRight"><img src="../../images/left_arrows.png" alt=""></a>
+		</div>                                                                                                          
+	</div>
+</div>
+<div class="clouds">
+	<div>
+		<p><img src="../../images/clouds2.png" alt=""></p>
+		<p><img src="../../images/clouds2.png" alt=""></p>
+	</div>
+</div>
+
+
+<div class="shop">
+	<h5>可美萃冰淇淋店铺</h5>
+	<div class="shop_content">
+		<div class="address">
+			<div class="select_address">
+				<div class="select_city">
+					<p>请选择城市<i><</i></p>
+					<ul>
+					</ul>
+				</div>
+				<p class="select_input"><input type="text"></p>
+				<p class="select_img"><img src="../../images/search.png" alt=""></p>
+			</div>
+			<ul class="address_list">
+			</ul>
+			
+		</div>
+		<div class="img_change">
+			<div class="img">
+			</div>
+			<div class="imgClick">
+			</div>
+		</div>
+
+	</div>
+	<div class="shop_bg"><img src="../../images/bubble_bg.png" alt=""></div>
+</div>
+
+
+
+
+<iframe src="../footer/footer.html" width="100%" frameborder="0" height="990" scrolling="no"></iframe>
+ 
+
+
+
+<style>
+
+</style>
+
+<script src="../../common/public.js"></script>
+<script src="../../common/nav.js"></script>
+<script src="../../common/dataBanner.js"></script>
+<!-- <script src="../../common/banner.js"></script> -->
+<script src="shop.js"></script>
+<script>
+$(document).ready(function() {
+
+	sourceBanner( "shop" )
+
+
+	
+
+	nDataAjax( url+"kmc/api/home/storeimage" , "get" ,function( data ){
+
+		if( data.status == 0 )
+		{
+
+			$.each( data.data , function(index, val) {
+				$('.img_change .img').append(`<p cid="${val.c_id}"><img src="${val.c_imgurl}" alt=""></p>`)
+
+				$('.img_change .imgClick').append(`<a href="javascript:;"></a>`)
+
+			});
+
+
+			$('.img_change .imgClick a:first').addClass('active')
+
+
+			loadImg( $('.img_change .img p img'))
+			imgChange()
+
+		}
+
+	})
+
+function imgChange(){
+
+
+	var firstImgWidth = 0,
+		ImgSum = 0,
+		oTimers = null,
+		aIndex = 0;
+
+
+	firstImgWidth = $('.img_change').width();
+	ImgSum = $('.img_change .img p').length;
+
+	$('.img_change .img').width( firstImgWidth * ImgSum )
+	$('.img_change .imgClick').delegate('a', 'click', function(event) {
+
+		var sumLeft = $(this).index() * firstImgWidth;
+		aIndex = $(this).index();
+
+		$('.img_change .imgClick a').eq(aIndex).addClass('active').siblings('a').removeClass('active')
+
+		$('.img_change .img').animate({left : "-"+sumLeft}, 500)
+
+
+	});
+
+
+	oTimers = setInterval( imgChange2 , 3000)
+	                                                                                                                                                                                                                                                                                    
+	$('.img_change').hover(function() {
+		clearInterval(oTimers)
+	}, function() {
+		oTimers = setInterval( imgChange2 , 3000)
+	});
+
+
+		
+
+	function imgChange2()
+	{
+		aIndex--;
+		if( aIndex < 0 )
+		{
+			aIndex = $('.img_change .img p').length-1; 
+		}
+		$('.img_change .imgClick a').eq(aIndex).addClass('active').siblings('a').removeClass('active')
+
+		var target = -(aIndex *firstImgWidth)
+
+		$('.img_change .img').animate({left : target}, 500)
+	}
+
+
+}
+
+
+});
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+.banner{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	height: 500px;
+}
+.banner .banner_img{
+	overflow: hidden;
+	position: absolute;
+}
+.banner .banner_img p{
+	overflow: hidden;
+	float: left;
+}
+.banner .change{
+	position: absolute;
+	width: 1200px;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+}
+.banner .change div{
+	opacity: 0;
+}
+.banner .change div a{
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.banner .change div a.changeRight{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+
+/* .clouds{
+	height: 0;
+	position: relative;
+
+}
+.clouds div{
+	width: 100%;
+	overflow: hidden;
+	height: 220px;
+	z-index: 200;
+	top: -170px;
+	position: relative;
+
+}
+.clouds p{
+	position: absolute;
+	z-index: 200;
+	overflow: hidden;
+	width: 100%;
+}
+.clouds p:first-of-type{
+	left: -300px;
+}
+.clouds p:last-of-type{
+	right: -200px;
+	top: 20px;
+}
+ */
+
+.about{
+	position: relative;
+	z-index: 200;
+	width: 1200px;
+	max-width: 1200px;
+	padding-bottom: 100px;
+}
+.about h5{
+	font-size: 30px;
+	color: #81c133;
+	padding-bottom: 30px;
+}
+
+.about .about_content img{
+	width: auto;
+	float: none;
+}
+.about .about_bg{
+	position: absolute;
+	top: 20px;
+	left: -60px;
+}

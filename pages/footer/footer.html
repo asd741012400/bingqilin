@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="../../common/common.css">
+	<script src="../../libs/jquery.js"></script>
+</head>
+<body>
+	
+
+<footer>
+	<div class="tab">
+		<div class="tab_text">
+		</div>
+		<div class="tab_title">
+		</div>
+		<div class="tab_content">
+			<ul>
+			</ul>
+		</div>
+		<div class="tab_bg"><img src="../../images/bubble_bg.png" alt=""></div>
+	</div>
+
+	<div class="footer_bg">
+		<div class="footer">
+			<b><img src="../../images/cup.png" alt=""></b>
+			<div>
+				<p>
+					<strong><img src="../../images/wx_code.jpg" alt=""></strong>
+					<span>扫一扫关注微信公众号</span>
+				</p>
+				<p>
+					<strong><img src="../../images/wx_code.jpg" alt=""></strong>
+					<span>扫一扫关注微博</span>
+				</p>
+			</div>
+		</div>
+		<div class="note">
+			<div>
+				<p>Copyright © 1998 - 2017 Tencent. All Rights Reserved</p>
+				<p>腾讯公司 版权所有 粤B2-20090059  粤网文[2014]0633-233号 网络视听许可证1904073号</p>
+			</div>
+		</div>
+		<div class="clouds">
+			<i><img src="../../images/clouds.png" alt=""></i>
+			<i><img src="../../images/clouds.png" alt=""></i>
+		</div>
+	</div>
+	
+</footer>
+
+
+
+<style>
+
+
+</style>
+
+<script src="../../common/public.js"></script>
+<script>
+
+
+yDataAjax( url+"kmc/api/banner/getALL" , "get" , {
+	pageIndex : 1,
+	pageSize : 50,
+	typeid : 2
+} , function( data ){
+
+	if( data.status == 0 )
+	{
+		
+		var tabData  = JSON.parse(data.data);
+
+		$.each( tabData , function(index, val) {
+			
+			$('.tab .tab_text').append( `<h1>${val.c_title}</h1>` )
+
+			$('.tab .tab_content ul').append(
+				`<li>
+					<p>${val.c_desc}</p>
+					<span><a><img src="${val.c_imgurl}" alt=""></a></span>
+				</li>`)
+
+
+
+		});
+
+		console.log( tabData )
+
+
+		loadImg( $('.tab .tab_content ul li span img') , function(){
+			
+			tabChange( $('.tab_content ul li') )	
+		})
+
+
+	}
+})
+
+function tabChange( obj )
+{
+	var num = obj.length;
+	var ulLeft = 1200;
+	var index = 0;
+	var oTimer = null;
+
+
+	$('.tab .tab_content ul').width( 1200 * num )
+
+	for (var i = 0; i < num; i++) {
+
+		$('.tab_title').append(`<a href="javascript:;"></a>`)
+
+	}
+	$('.tab_title a:first').addClass('active');
+	$('.tab_text h1:first').addClass('active');
+
+	$('.tab_title').delegate('a', 'click', function(event) {
+
+		index = $(this).index();
+
+		$('.tab_title a').eq(index).addClass('active').siblings('a').removeClass('active');
+		$('.tab_text h1').eq(index).addClass('active').siblings('h1').removeClass('active');
+		$('.tab .tab_content ul').animate({left : -ulLeft*index}, 500)
+
+	});
+
+
+	
+
+	oTimer = setInterval( tabChange2 , 3000 )
+
+	$('.tab').hover(function() {
+
+		clearInterval(oTimer)
+
+
+	}, function() {
+
+
+		oTimer = setInterval( tabChange2 , 3000 )
+
+	});
+
+
+
+	function tabChange2(){
+		index++;
+		if( index >= num )
+		{
+			index = 0;
+		}
+		$('.tab_text h1').eq(index).addClass('active').siblings('h1').removeClass('active');
+		$('.tab_title a').eq(index).addClass('active').siblings('a').removeClass('active');
+		$('.tab .tab_content ul').animate({left : -ulLeft*index}, 500)
+
+	}
+
+}
+</script>
+</body>
+</html>

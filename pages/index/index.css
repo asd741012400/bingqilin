@@ -1,0 +1,162 @@
+.banner{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	height: 550px;
+}
+.banner .banner_img{
+	overflow: hidden;
+	position: absolute;
+}
+.banner .banner_img p{
+	overflow: hidden;
+	float: left;
+}
+.banner .change{
+	position: absolute;
+	width: 1200px;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+}
+.banner .change div{
+	/* opacity: 0; */
+}
+.banner .change div a{
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.banner .change div a.changeRight{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+.clouds div{
+	top: -170px;
+}
+
+/* 
+.clouds{
+	height: 0;
+	position: relative;
+	z-index: 200;
+}
+.clouds div{
+	width: 100%;
+	overflow: hidden;
+	height: 220px;
+	z-index: 200;
+	top: -170px;
+	position: relative;
+
+}
+.clouds p{
+	position: absolute;
+	z-index: 200;
+	overflow: hidden;
+	width: 100%;
+}
+.clouds p img{
+	width: auto;
+}
+.clouds p:first-of-type img{
+	left: 0px;
+	animation: cloudsP1 14s infinite forwards;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	position: relative;
+}
+.clouds p:last-of-type img{
+	right: 0;
+	top: 0;
+	position: relative;
+	animation: cloudsP2 14s infinite forwards;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	transform: rotateY(180deg);
+}
+
+
+@keyframes cloudsP1
+{
+
+	from {left: 0;}
+	to {left: -200px;}
+}
+
+@keyframes cloudsP2
+{
+	from {right: 0;}
+	to {right: -150px;}
+}
+ */
+
+.make{
+	background: url('../../images/creamistry_bg.jpg') left/100% no-repeat;
+	position: relative;
+	z-index: 200;
+	margin: 0 auto;
+	width: 1200px;
+	max-width: 1200px;
+	height: 593px;
+	margin-bottom: 100px;
+}
+.make div{
+	float: right;
+	width: 680px;
+}
+.make div h2{
+	color:#81c133;
+	padding-bottom: 20px;
+	font-size: 40px;
+}
+.make div p{
+	font-size: 26px;
+	color: #a2affd;
+	padding-bottom: 50px;
+}
+.make div ul li{
+	height: 45px;
+	padding-left: 70px;
+	padding-top: 9px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.make div ul li:nth-of-type(1){
+	background: url('../../images/icon_img1.png') left no-repeat;
+}
+.make div ul li:nth-of-type(2){
+	background: url('../../images/icon_img2.png') left no-repeat;
+}
+.make div ul li:nth-of-type(3){
+	background: url('../../images/icon_img3.png') left no-repeat;
+}
+
+
+
+.menu_btn{
+	height: 213px;
+	background: url('../../images/menu.png') no-repeat;
+	position: absolute;
+	right: 0;
+	top: 940px;
+	z-index: 200;
+	overflow: hidden;
+}
+.menu_btn a{
+	display: block;
+	width: 200px;
+	height: 160px;
+	float: left;
+	margin: 30px 0 0 30px;
+	cursor:pointer;
+}	
+
+

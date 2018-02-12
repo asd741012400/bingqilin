@@ -1,0 +1,269 @@
+.banner{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	height: 500px;
+}
+.banner .banner_img{
+	overflow: hidden;
+	position: absolute;
+}
+.banner .banner_img p{
+	overflow: hidden;
+	float: left;
+}
+
+.banner .change{
+	position: absolute;
+	width: 1200px;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+}
+.banner .change div{
+	opacity: 0;
+}
+.banner .change div a{
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.banner .change div a.changeRight{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+/* 
+.clouds{
+	height: 0;
+	position: relative;
+
+}
+.clouds div{
+	width: 100%;
+	overflow: hidden;
+	height: 220px;
+	z-index: 200;
+	top: -170px;
+	position: relative;
+
+}
+.clouds p{
+	position: absolute;
+	z-index: 200;
+	overflow: hidden;
+	width: 100%;
+}
+.clouds p:first-of-type{
+	left: -300px;
+}
+.clouds p:last-of-type{
+	right: -200px;
+	top: 20px;
+}
+
+ */
+.shop{
+	position: relative;
+	z-index: 200;
+	width: 1200px;
+	max-width: 1200px;
+	padding-bottom: 100px;
+}
+.shop h5{
+	font-size: 30px;
+	color: #81c133;
+	padding-bottom: 30px;
+}
+
+.shop .shop_content img{
+	width: auto;
+	float: none;
+}
+.shop .shop_bg{
+	position: absolute;
+	top: -30px;
+	left: -110px;
+}
+
+
+.shop_content{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	position: relative;
+	z-index: 300;
+}
+.shop_content .address{
+	flex: 1;
+}
+.shop_content .img_change{
+	width: 682px;
+	height: 604px;
+	overflow: hidden;
+	position: relative;
+}
+
+.shop_content .img_change .img{
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.shop_content .img_change .img p{
+	float: left;
+	width: 682px;
+}
+.shop_content .img_change .img p img{
+	width: 100%;
+}
+.shop_content .img_change div.imgClick{
+	
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+}
+.shop_content .img_change div.imgClick a{
+	display: block;
+	width: 11px;
+	height: 11px;
+	border: 1px solid #e0dede;
+	margin: 0 5px;
+	border-radius: 50%;
+	float: left;
+}
+.shop_content .img_change div.imgClick a.active{
+	background: #81c133;
+	border: 1px solid #81c133;
+}
+
+
+
+.shop_content .address{
+	flex: 1;
+
+}
+
+.shop_content .address .select_address{
+	height: 43px;
+}
+.shop_content .address .select_address .select_city{
+	float: left;
+	position: relative;
+	margin-right: 20px;
+	width: 210px;
+}
+.shop_content .address .select_address .select_city p{
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	height: 43px;
+	float: left;
+	padding-left: 20px;
+	line-height: 43px;
+	width: 190px;
+	overflow: hidden;
+	color: #666666;
+	font-size: 16px;
+}
+.shop_content .address .select_address .select_city p i{
+	font-style: normal;
+	float: right;
+	margin-right: 10px;
+	transform: rotate(270deg);
+	font-size: 20px;
+}
+.shop_content .address .select_address .select_city ul{
+	border-radius: 5px;
+	border: 1px solid #c0c0c0;
+	margin-top: 53px;
+	color: #333333;
+	font-size: 16px;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: 300;
+	background: #fff;
+}
+
+.shop_content .address .select_address .select_city ul li{
+	padding: 0 9px;
+}
+.shop_content .address .select_address .select_city ul li a{
+	border-bottom: 1px solid #c0c0c0;
+	line-height: 44px;
+	display: block;
+}
+
+
+.shop_content .address .select_address .select_city ul li:hover{
+	background: #f0f0f0;
+}
+
+/* .shop_content .address .select_address .select_city ul li.active{
+	background: #f0f0f0;
+} */
+.shop_content .address .select_address .select_city ul li:last-of-type a{
+	border-bottom: 0;
+}
+
+.shop_content .address .select_address p.select_input{
+	float: left;
+	height: 43px;
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	width: 180px;
+	padding-left: 20px;
+}
+.shop_content .address .select_address p.select_input input{
+	line-height: 43px;
+	width: 100%;
+	border: 0;
+	background: none;
+	outline:none;
+}
+
+.shop_content .address .select_address p.select_img{
+	float: left;
+	width: 45px;
+	height: 45px;
+	margin-left: 18px;
+}
+
+
+.shop_content .address .address_list{
+	margin: 0;
+	margin-top: 30px;
+	height: 530px;
+	overflow-y: scroll;
+	width: 494px;
+} 
+.shop_content .address .address_list li{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	width: 300px;
+	margin: 0;
+	margin-bottom: 20px;
+	padding-left: 50px;
+	background: url('../../images/icon_address.png') left 5px top no-repeat;
+}
+.shop_content .address .address_list li h4{
+	font-size: 16px;
+	color: #333333;
+	padding-bottom: 20px;
+	font-weight: normal;
+}
+.shop_content .address .address_list li p{
+	font-size: 14px;
+	color: #666666;
+}
+.shop_content .address .address_list li a{
+	font-size: 14px;
+	color: #666666;
+	margin-top: 14px;
+}

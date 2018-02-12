@@ -1,0 +1,116 @@
+.banner{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	height: 500px;
+}
+.banner .banner_img{
+	overflow: hidden;
+	position: absolute;
+}
+.banner .banner_img p{
+	overflow: hidden;
+	float: left;
+}
+.banner .change{
+	position: absolute;
+	width: 1200px;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+}
+.banner .change div{
+	opacity: 0;
+}
+.banner .change div a{
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.banner .change div a.changeRight{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+/* 
+.clouds{
+	height: 0;
+	position: relative;
+
+}
+.clouds div{
+	width: 100%;
+	overflow: hidden;
+	height: 220px;
+	z-index: 200;
+	top: -170px;
+	position: relative;
+
+}
+.clouds p{
+	position: absolute;
+	z-index: 200;
+	overflow: hidden;
+	width: 100%;
+}
+.clouds p:first-of-type{
+}
+.clouds p:last-of-type{
+	top: 20px;
+} */
+
+.product{
+	position: relative;
+	z-index: 300;
+	width: 1200px;
+	max-width: 1200px;
+}
+.product h5{
+	font-size: 30px;
+	color: #fff;
+	background: url('../../images/product_titleBg.jpg') center no-repeat;
+	line-height: 66px;
+	height: 71px;
+	text-align: center;
+}
+.product ul{
+	overflow: hidden;
+	margin-top: 10px;
+}
+.product ul li{
+	float: left;
+	width: 300px;
+	padding-right: 140px;
+	margin-top: 60px;
+	padding-bottom: 100px;
+}
+.product ul li:nth-of-type(3n){
+	padding-right: 0;
+}
+.product ul li span{
+	display: block;
+	width: 280px;
+	height: 280px;
+	border: 13px solid #a2ce5d;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.product ul li h6{
+	font-size: 30px;
+	color: #f05875;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.product ul li p{
+	font-size: 16px;
+	color: #666666;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
